@@ -2,7 +2,7 @@
 Este documento detalha as alterações recentes realizadas nos arquivos principais do projeto: `index.html`, `style.css` e `script.js`.
 
 <p float="left">
-  <img src="./img/homeImg.png" width="45%" height="400px" />
+  <img src="./img/homeImg.png" width="45%" height="" />
   <img src="./img/etapasImg.png" width="40%" />
 </p>
 
