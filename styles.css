@@ -1,0 +1,219 @@
+
+:root {
+    --inputColor: #c8d2ffa4;
+    --borderColor: #00000057;
+    --focusColor: #82a3c979;
+    --padding: 2px 6px;
+}
+
+body {
+    animation: fadeIn .5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5;
+        transform: translateX(-100vw);
+    }
+    100% {
+        opacity: 1.0;
+        transform: translateX(0);
+    }
+}
+
+::selection {
+    background-color: var(--focusColor);
+    color: rgb(139, 138, 138);
+}
+
+::-webkit-scrollbar {
+    background-color: var(--focusColor);
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--borderColor);
+}
+
+/* Estilo dos Inputs e Textareas */
+input[type="text"], textarea {
+    background-color: var(--inputColor);
+    padding: var(--padding);
+    outline: none;
+    transition: all .3s ease-in-out;
+}
+
+input[type="text"]:focus, textarea:focus,
+input[type="text"]:hover, textarea:hover {
+    background-color: var(--focusColor);
+}
+
+input[type="date"], select {
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+textarea {
+    resize: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+input[type="text"], label {
+    font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+    font-family: "Inter", sans-serif;
+}
+
+#etapasRoad {
+    font-family: "Inter", sans-serif;
+    font-size: 23px;
+}
+
+#app {
+    border: solid 1px var(--borderColor);
+    box-shadow: 0 0 10px var(--borderColor);
+}
+
+.roadmap-container {
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+.roadmap-objective {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.roadmap-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.roadmap-step {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 300px;
+    text-align: center;
+    background-color: #374151;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: all .3s ease-in-out; 
+    animation: brilho .3s ease-in-out;
+    animation-delay: 1s;
+}
+
+@keyframes brilho {
+    0%{
+        background: linear-gradient(to left top,#454c58,#374151,#374151 );
+    }
+
+    50%{
+        background: linear-gradient(to left top,#374151,#454c58,#374151 );
+    }
+
+    100%{
+        background: linear-gradient(to left top,#374151,#374151,#454c58 );
+    }
+
+
+}
+
+.roadmap-step:hover{
+    opacity: 0.5;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Colunas Responsivas */
+.roadmap-left-column,
+.roadmap-right-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.roadmap-left-column {
+    animation: leftIn .6s;
+}
+
+.info-text {
+    font-size: 0.875rem;
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+    font-size: 20px;
+}
+
+
+@keyframes leftIn {
+    0% {
+        transform: translateX(300vw);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.roadmap-right-column {
+    text-align: right;
+    animation: rightIn .6s;
+}
+
+@keyframes rightIn {
+    0% {
+        transform: translateX(-300vw);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.roadmap-progress-container {
+    margin-top: 1rem;
+}
+
+.roadmap-progress-bar {
+    background-color: #374151;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    height: 1rem;
+}
+
+.roadmap-progress-bar > div {
+    background-color: #4b5563;
+    height: 100%;
+    transition: width .5s ease-in-out;
+}
+
+/* Estilos para telas menores (mobile) */
+@media (max-width: 767px) {
+    .roadmap {
+        display: block;
+        padding: 10px;
+    }
+
+    .roadmap-steps {
+        display: block; /* Organização em bloco para telas pequenas */
+        margin-top: 20px;
+    }
+
+    .roadmap-step {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .roadmap-divider {
+        display: none; /* Oculta o divisor para telas menores */
+    }
+}
+
